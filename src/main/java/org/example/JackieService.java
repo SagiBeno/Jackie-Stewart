@@ -73,4 +73,13 @@ public class JackieService {
         int evszam = matrix[index][0];
         return evszam;
     }
+
+    public String nyeresekEvtizedenkent () {
+
+        for (int i = 0; i < matrix.length; i++) {
+
+        }
+
+        return "";
+    }
 }
