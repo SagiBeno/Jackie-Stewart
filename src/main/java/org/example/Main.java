@@ -9,6 +9,9 @@ public class Main {
         // 1. feladat: Jackie
         // 2. feladat
         JackieService service = new JackieService("files/jackie.txt");
+
+        // 3. feladat
+        System.out.println("3. feladat: " + service.getMatrix().length); // 10
         debugger();
     }
 
