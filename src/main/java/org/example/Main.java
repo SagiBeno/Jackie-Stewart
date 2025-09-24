@@ -12,7 +12,9 @@ public class Main {
 
         // 3. feladat
         System.out.println("3. feladat: " + service.getLinesLenght()); // 10
+
+        // 4. feladat
+        System.out.println("4. feladat: " + service.countRaces());
         debugger();
     }
-
 }

@@ -2,6 +2,9 @@ package org.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class JackieService {
@@ -58,5 +61,16 @@ public class JackieService {
 
     public int getLinesLenght() {
         return getMatrix().length;
+    }
+
+    public int countRaces() {
+        List<Integer> races = new ArrayList<>();
+        for (int i = 0; i < matrix.length; i++) {
+            races.add(matrix[i][1]);
+        }
+        int max = Collections.max(races);
+        int index = races.indexOf(max);
+        int evszam = matrix[index][0];
+        return evszam;
     }
 }
