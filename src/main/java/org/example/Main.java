@@ -11,7 +11,7 @@ public class Main {
         JackieService service = new JackieService("files/jackie.txt");
 
         // 3. feladat
-        System.out.println("3. feladat: " + service.getMatrix().length); // 10
+        System.out.println("3. feladat: " + service.getLinesLenght()); // 10
         debugger();
     }
 
