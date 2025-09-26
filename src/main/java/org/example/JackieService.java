@@ -2,6 +2,8 @@ package org.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -57,6 +59,7 @@ public class JackieService {
             }
             index++;
         }
+        scanner.close();
     }
 
     public int getLinesLenght() {
@@ -107,5 +110,36 @@ public class JackieService {
         }
 
         return kiiras;
+    }
+
+    public void htmlIras(String filename) throws IOException {
+        File fki = new File(filename);
+        FileWriter writer = new FileWriter(fki);
+        StringBuilder html = new StringBuilder();
+        html.append(
+                "<!doctype html>\n" +
+                "<html>\n" +
+                "<head></head>\n" +
+                "<style>\nth, td { border: 1px solid black; padding: 5px; } \n table { border-collapse: collapse; text-align: center; }</style>\n" +
+                "<body>\n" +
+                "<h1>Jackie Stewart</h1>\n" +
+                "<table>\n" +
+                "<tr><th>Versenyzés éve</th><th>Versenyek száma</th><th>Győzelmek száma</th></tr>\n"
+        );
+
+        for (int i = 0; i < getMatrix().length; i++) {
+            html.append(
+                    "<tr><td>" + getMatrix()[i][0] + "</td><td>" + getMatrix()[i][1] + "</td><td>" + getMatrix()[i][2] + "</td></tr>\n"
+            );
+        }
+
+        html.append(
+                "</table>\n" +
+                "</body>\n" +
+                "</html>\n"
+        );
+
+        writer.write(String.valueOf(html));
+        writer.close();
     }
 }

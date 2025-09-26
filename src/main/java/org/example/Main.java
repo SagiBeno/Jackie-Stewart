@@ -1,11 +1,11 @@
 package org.example;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Main {
     private static void debugger() {}
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         // 1. feladat: Jackie
         // 2. feladat
         JackieService service = new JackieService("files/jackie.txt");
@@ -19,7 +19,9 @@ public class Main {
         // 5. feladat
         System.out.println("5. feladat: " + service.nyeresekEvtizedenkent());
 
-
+        // 6. feladat
+        service.htmlIras("files/jackie.html");
+        System.out.println("6. feladat: jackie.html");
         debugger();
     }
 }
