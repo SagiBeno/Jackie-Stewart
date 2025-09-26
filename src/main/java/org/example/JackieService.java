@@ -73,8 +73,7 @@ public class JackieService {
         }
         int max = Collections.max(races);
         int index = races.indexOf(max);
-        int evszam = matrix[index][0];
-        return evszam;
+        return matrix[index][0];
     }
 
     public StringBuilder nyeresekEvtizedenkent () {
