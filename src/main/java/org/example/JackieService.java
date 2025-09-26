@@ -74,12 +74,38 @@ public class JackieService {
         return evszam;
     }
 
-    public String nyeresekEvtizedenkent () {
+    public StringBuilder nyeresekEvtizedenkent () {
+        List<Integer> evtizedek = new ArrayList<>();
 
-        for (int i = 0; i < matrix.length; i++) {
+        for (int i = 0; i < getMatrix().length; i++) {
+            if (!evtizedek.contains(getMatrix()[i][0] % 1000 % 100 / 10)) {
+                evtizedek.add(getMatrix()[i][0] % 1000 % 100 / 10);
+            }
 
         }
 
-        return "";
+        Collections.sort(evtizedek);
+        int[] gyozelemSzamok = new int[evtizedek.size()];
+        for (int i = 0; i < evtizedek.size(); i++) {
+
+            for (int j = 0; j < getMatrix().length; j++) {
+                int evszamUtolsoKetto = getMatrix()[j][0] % 1000 % 100 / 10;
+
+                if (evszamUtolsoKetto == evtizedek.get(i)) {
+                    gyozelemSzamok[i] += getMatrix()[j][2];
+                }
+            }
+        }
+
+        StringBuilder kiiras = new StringBuilder();
+        for (int i = 0; i < evtizedek.size(); i++) {
+            kiiras.append("\n   ");
+            kiiras.append(evtizedek.get(i));
+            kiiras.append("0-as/es évek: ");
+            kiiras.append(gyozelemSzamok[i]);
+            kiiras.append(" megnyeret verseny");
+        }
+
+        return kiiras;
     }
 }

@@ -17,7 +17,9 @@ public class Main {
         System.out.println("4. feladat: " + service.countRaces());
 
         // 5. feladat
-        System.out.println("5. feladat: " );
+        System.out.println("5. feladat: " + service.nyeresekEvtizedenkent());
+
+
         debugger();
     }
 }
