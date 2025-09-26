@@ -22,6 +22,5 @@ public class Main {
         // 6. feladat
         service.htmlIras("files/jackie.html");
         System.out.println("6. feladat: jackie.html");
-        debugger();
     }
 }

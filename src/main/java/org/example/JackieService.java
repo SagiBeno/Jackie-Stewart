@@ -120,7 +120,7 @@ public class JackieService {
                 "<!doctype html>\n" +
                 "<html>\n" +
                 "<head></head>\n" +
-                "<style>\nth, td { border: 1px solid black; padding: 5px; } \n table { border-collapse: collapse; text-align: center; }</style>\n" +
+                "<style>\nth, td { border: 1px solid black; padding: 5px; } \ntable { border-collapse: collapse; text-align: center; }\n</style>\n" +
                 "<body>\n" +
                 "<h1>Jackie Stewart</h1>\n" +
                 "<table>\n" +
